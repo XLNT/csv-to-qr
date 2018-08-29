@@ -18,7 +18,7 @@ const main = async () => {
 
   const fullOutputDirectory = path.resolve(outputDirectory)
   for (const [code, url] of parsed) {
-    const outputFile = path.resolve(outputDirectory, `${code}.png`);
+    const outputFile = path.resolve(fullOutputDirectory, `${code}.png`);
     const input = url
     await shell.exec(`qrencode -o ${outputFile} "${input}"`)
   }
